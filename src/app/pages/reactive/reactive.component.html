@@ -33,6 +33,10 @@
                class="text-danger">
             Ingresa un Apellido
         </small>
+        <small *ngIf="forma.get('apellido').hasError('noHerrera')"
+                class="text-danger">
+          Herrera no es valido
+        </small>
       </div>
     </div>
 
@@ -101,7 +105,7 @@
             <td>
               <input class="form-control"
                      type="text"
-                     formControlName="i">
+                     [formControlName]="i">
             </td>
             <td>
               <button class="btn btn-danger"
