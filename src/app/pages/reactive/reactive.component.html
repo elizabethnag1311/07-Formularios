@@ -58,6 +58,56 @@
     </div>
   </div>
 
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Usuario</label>
+    <div class="col-8">
+
+      <input class="form-control"
+             type="email"
+             placeholder="Usuario"
+             formControlName="usuario"
+             [class.is-invalid]="inputNoValido('usuario')">
+      <small *ngIf="inputNoValido('usuario')"
+             class="text-danger">
+          Nombre de Usuario no Disponible
+      </small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Contraseña</label>
+    <div class="col-8">
+
+      <input class="form-control"
+             type="password"
+             placeholder="Contraseña"
+             formControlName="pass1"
+             [class.is-invalid]="inputNoValido('pass1')">
+      <small *ngIf="inputNoValido('pass1')"
+             class="text-danger">
+          Min 8 caracteres y sin espacios
+      </small>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Confirmar</label>
+    <div class="col-8">
+
+      <input class="form-control"
+             type="password"
+             placeholder="Contraseña"
+             formControlName="pass2"
+             [class.is-invalid]="pass2NoValido">
+      <small *ngIf="pass2NoValido"
+             class="text-danger">
+          No coinciden
+      </small>
+    </div>
+  </div>
+
+
+
   <div class="form-group row" formGroupName="direccion">
     <label class="col-2 col-form-label">Direccion</label>
     <div class="form-row col-8">
